@@ -2,6 +2,20 @@
 
 This repository contains two examples of creating AWS EC2 instances using Terraform. One example creates an instance without an SSH key pair, while the other sets up an instance with an SSH key pair for secure access.
 
+## Menu
+- [Common Configuration](#common-configuration)
+- [Folder Structure](#folder-structure)
+- [Scenarios](#scenarios)
+  - [1. EC2 Instance Without SSH Key Pair](#1-ec2-instance-without-ssh-key-pair)
+  - [2. EC2 Instance With SSH Key Pair](#2-ec2-instance-with-ssh-key-pair)
+- [How to Create SSH Keys](#how-to-create-ssh-keys)
+- [Notes for Students](#notes-for-students)
+  - [When to Use Each Scenario](#when-to-use-each-scenario)
+  - [Best Practices](#best-practices)
+- [Commands to Apply Configuration](#commands-to-apply-configuration)
+- [Cleanup](#cleanup)
+- [Terraform Cheatsheet](#terraform-cheatsheet)
+
 ## Common Configuration
 
 Both examples share some common configuration blocks for Terraform setup and AWS provider. These are detailed below:
