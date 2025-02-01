@@ -5,10 +5,10 @@ This repository contains two examples of creating AWS EC2 instances using Terraf
 ## Menu
 - [Common Configuration](#common-configuration)
 - [Folder Structure](#folder-structure)
+- [How to Create SSH Keys](#how-to-create-ssh-keys)
 - [Scenarios](#scenarios)
   - [1. EC2 Instance Without SSH Key Pair](#1-ec2-instance-without-ssh-key-pair)
   - [2. EC2 Instance With SSH Key Pair](#2-ec2-instance-with-ssh-key-pair)
-- [How to Create SSH Keys](#how-to-create-ssh-keys)
 - [Notes for Students](#notes-for-students)
   - [When to Use Each Scenario](#when-to-use-each-scenario)
   - [Best Practices](#best-practices)
@@ -50,7 +50,17 @@ These blocks are consistent across both examples and should be placed at the top
 ├── ec2
 │   └── ec2_with_keys.tf
 ```
+## How to Create SSH Keys
 
+1. Open a terminal on your local machine.
+2. Generate an SSH key pair using the following command:
+   ```bash
+   ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
+   ```
+3. Follow the prompts to set a passphrase or leave it empty for no passphrase.
+4. The public key will be saved in `~/.ssh/id_rsa.pub`. Use this file in the Terraform configuration.
+
+   
 ## Scenarios
 
 ### 1. EC2 Instance Without SSH Key Pair
@@ -135,16 +145,6 @@ This scenario creates an EC2 instance with an SSH key pair, allowing secure acce
 
 #### Cons
 - Requires management of SSH keys (ensure keys are secure and not lost).
-
-## How to Create SSH Keys
-
-1. Open a terminal on your local machine.
-2. Generate an SSH key pair using the following command:
-   ```bash
-   ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
-   ```
-3. Follow the prompts to set a passphrase or leave it empty for no passphrase.
-4. The public key will be saved in `~/.ssh/id_rsa.pub`. Use this file in the Terraform configuration.
 
 ## Notes for Students
 
