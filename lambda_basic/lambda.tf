@@ -36,6 +36,13 @@ resource "aws_lambda_function" "my_lambda" {
   runtime       = "python3.8"
 
   depends_on = [aws_iam_policy_attachment.lambda_basic]
+
+  environment {
+    variables = {
+      LOG_LEVEL = "INFO"
+      API_KEY   = "your_api_key"
+    }
+  }
 }
 
 output "lambda_function_arn" {
